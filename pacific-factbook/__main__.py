@@ -1,1 +1,3 @@
-print("hello world")
+from . import name
+
+print(name.generate())
