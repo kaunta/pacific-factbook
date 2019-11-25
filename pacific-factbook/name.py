@@ -1,5 +1,11 @@
+from random import choice
+
+
 def generate() -> str:
-    return "kirau"
+    consonant = lambda: choice("bcdfghjklmnpqrstvwxyz")
+    vowel = lambda: choice("aeiou")
+    syllable = lambda: consonant() + vowel() + choice(("", "n"))
+    return (syllable() + syllable()).capitalize()
 
 
 if __name__ == "__main__":
