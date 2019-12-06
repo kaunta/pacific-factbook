@@ -6,17 +6,17 @@ print("<p>Location:")
 pos = coordinate.generate()
 
 if pos.latitude > 0:
-    print(f"{pos.latitude}&deg; N,")
+    print(f"{pos.latitude:.2f}&deg; N,")
 elif pos.latitude < 0:
-    print(f"{-pos.latitude}&deg; S,")
+    print(f"{-pos.latitude:.2f}&deg; S,")
 else:
-    print(f"{pos.latitude}&deg;,")
+    print(f"{pos.latitude:.2f}&deg;,")
 
 if pos.longitude > 0:
-    print(f"{pos.longitude}&deg; E.")
+    print(f"{pos.longitude:.2f}&deg; E.")
 elif pos.longitude < 0:
-    print(f"{-pos.longitude}&deg; W.")
+    print(f"{-pos.longitude:.2f}&deg; W.")
 else:
-    print(f"{pos.longitude}&deg;.")
+    print(f"{pos.longitude:.2f}&deg;.")
 
 print("</p>")
