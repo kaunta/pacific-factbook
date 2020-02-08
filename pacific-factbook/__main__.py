@@ -6,6 +6,15 @@ country_name = name.generate()
 
 print("<h1>", country_name, "</h1>")
 print("<figure>", flag.generate(), "</figure>")
+print(
+    """<figure>
+<figcaption>map</figcaption>
+<svg width="200" height="200" style="border: 1px solid black">
+    <rect width="100%" height="100%" fill="#0ca4ff"/>
+    <circle cx="100" cy="100" r="40" stroke="#E8D9C5" stroke-width="4" fill="#E8D9C5" />
+</svg>
+</figure>"""
+)
 
 print("<h1>Geography</h1>")
 print("<h2>Location</h2>")
