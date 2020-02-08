@@ -6,7 +6,12 @@ country_name = name.generate()
 
 print("<h1>", country_name, "</h1>")
 print("<figure>", flag.generate(), "</figure>")
-print("<p>Location:")
+
+print("<h1>Geography</h1>")
+print("<h2>Location</h2>")
+print("<p>The pacific ocean</p>")
+print("<h2>Geographic coordinates</h2>")
+print("<p>")
 pos = coordinate.generate()
 
 if pos.latitude > 0:
@@ -24,6 +29,23 @@ else:
     print(f"{pos.longitude:.2f}&deg;.")
 
 print("</p>")
+print("<h2>Land boundaries</h2>")
+print("<p>0km</p>")
+print("<h2>climate</h2>")
+print("<p>tropical; hot and humid; wet season May to November</p>")
+print("<h2>natural resources</h2>")
+print(
+    "<p>",
+    random.choice(
+        [
+            "forests",
+            "minerals (especially gold)",
+            "marine products",
+            "deep-seabed minerals",
+        ]
+    ),
+    "</p>",
+)
 
 print("<h1>People and Society</h1>")
 print(
