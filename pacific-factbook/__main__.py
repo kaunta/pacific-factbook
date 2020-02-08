@@ -1,6 +1,10 @@
+import random
+
 from . import name, flag, coordinate
 
-print("<h1>", name.generate(), "</h1>")
+country_name = name.generate()
+
+print("<h1>", country_name, "</h1>")
 print("<figure>", flag.generate(), "</figure>")
 print("<p>Location:")
 pos = coordinate.generate()
@@ -20,3 +24,12 @@ else:
     print(f"{pos.longitude:.2f}&deg;.")
 
 print("</p>")
+
+print("<h1>People and Society</h1>")
+print(
+    "<dl><dt>population</dt><dd>",
+    format(random.randint(40000, 400_000), ","),
+    "</dd><dt>nationality</dt><dd>",
+    f"{country_name}ian",
+    "</dd></dl>",
+)
