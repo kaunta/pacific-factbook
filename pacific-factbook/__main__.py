@@ -12,37 +12,63 @@ report_template = Template(
     <title>$name</title>
 </head>
 <body>
-    <h1>$name</h1>
+    <header>
+        <h1>$name</h1>
+    </header>
     <figure>
-        <figcaption>flag</figcaption>
+        <figcaption>Flag of $name</figcaption>
         $flag_svg
     </figure>
     <figure>
-        <figcaption>map</figcaption>
+        <figcaption>Map of $name</figcaption>
         $map_svg
     </figure>
 
-    <h2>Geography</h2>
-    <dl>
-    <dt>Location</dt>
-        <dd>$location</dd>
-    <dt>Geographic Coordiantes</dt>
-        <dd>$coordinates</dd>
-    <dt>Coastline</dt>
-        <dd>$coastline</dd>
-    <dt>Climate</dt>
-        <dd>$climate</dd>
-    <dt>Natural Resources</dt>
-        <dd>$natural_resources</dd>
-    </dl>
+    <section>
+        <header>
+            <h2>Geography</h2>
+        </header>
+        <dl>
+        <dt>Location</dt>
+            <dd>$location</dd>
+        <dt>Geographic Coordinates</dt>
+            <dd>$coordinates</dd>
+        <dt>Coastline</dt>
+            <dd>$coastline</dd>
+        <dt>Climate</dt>
+            <dd>$climate</dd>
+        <dt>Natural Resources</dt>
+            <dd>$natural_resources</dd>
+        </dl>
+    </section>
 
-    <h2>People and Society</h2>
-    <dl>
-    <dt>Population</dt>
-        <dd>$population</dd>
-    <dt>Nationality</dt>
-        <dd>$nationality</dd>
-    </dl>
+    <section>
+        <header>
+            <h2>People and Society</h2>
+        </header>
+        <dl>
+        <dt>Population</dt>
+            <dd>$population</dd>
+        <dt>Nationality</dt>
+            <dd>$nationality</dd>
+        </dl>
+    </section>
+
+    <style>
+    header {
+        position: sticky;
+        top: 0px;
+        background: #ECE691;
+        padding-left: 1ch;
+    }
+    body {
+        font-family: sans-serif;
+    }
+    dt {
+        margin-top: 1ch;
+        font-weight: bold;
+    }
+    </style>
 </body>
 </html>
 """
@@ -80,7 +106,7 @@ report_parameters = {
     "location": "The Pacific ocean.",
     "coordinates": coords,
     "coastline": f"{random.randint(100, 1_000)} km",
-    "climate": "tropical; hot and humid; wet season May to November",
+    "climate": "Tropical; hot and humid; wet season May to November.",
     "natural_resources": random.choice(
         [
             "forests",
@@ -88,7 +114,7 @@ report_parameters = {
             "marine products",
             "deep-seabed minerals",
         ]
-    ),
+    ).capitalize(),
     "population": format(random.randint(40000, 400_000), ","),
     "nationality": f"{country_name}ian",
 }
