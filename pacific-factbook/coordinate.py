@@ -1,11 +1,19 @@
-from typing import NamedTuple
-import numbers
 from random import uniform
+from typing import NamedTuple
+import math
+import numbers
 
 
 class Coordinate(NamedTuple):
     latitude: numbers.Real
     longitude: numbers.Real
+
+
+def distance(p1: Coordinate, p2: Coordinate) -> numbers.Real:
+    # FIXME
+    return math.sqrt(
+        (p1.latitude - p2.latitude) ** 2 + (p1.longitude - p2.longitude) ** 2
+    )
 
 
 def generate() -> Coordinate:

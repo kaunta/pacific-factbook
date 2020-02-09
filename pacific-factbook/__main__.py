@@ -1,7 +1,7 @@
 import random
 from string import Template
 
-from . import name, flag, coordinate
+from . import name, flag, coordinate, islands
 
 report_template = Template(
     """
@@ -103,7 +103,9 @@ report_parameters = {
             <circle cx="100" cy="100" r="40" stroke="#E8D9C5" stroke-width="4" fill="#E8D9C5" />
         </svg>
     """,
-    "location": "The Pacific ocean.",
+    "location": "The Pacific ocean. Close to "
+    + ", ".join(islands.nearby_islands(pos))
+    + ".",
     "coordinates": coords,
     "coastline": f"{random.randint(100, 1_000)} km",
     "climate": "Tropical; hot and humid; wet season May to November.",
